@@ -1,0 +1,28 @@
+{
+  "personalInformation": {
+    "name": "정희섭",
+    "birth": "1997.01.21",
+    "age": 27,
+    "phoneNumber": "010-4012-2195",
+    "email": "jhs2195@gmail.com",
+    "github": "https://github.com/Eriniss",
+    "blog": "https://velog.io/@jqk2195"
+  },
+
+  "careerNEducation": {
+      "university": "2015.03 ~ 2023.03 울산대학교 화학과 졸업 예정",
+      "webEdu": "2022.04 ~ 2022.11 ICT 경남권 인공지능 웹서비스 개발과정 수료",
+      "awsEdu": "2022.09 ~ 2022.11 AWS KR Training 과정 수료"
+  },
+  
+  "skillsNStack": {
+    "languages": ["HTML & CSS", "JavaScript & TypeScript", "Python"],
+    "frameworks": ["React", "Express.js"],
+    "database": ["MongoDB"],
+    "tools": ["Git", "AWS", "Figma"]
+  },
+
+  "projects": ["first-CRUD", "ICT-ulsan-project", "myProfileReact"],
+
+  "selfIntroduce": "안녕하세요!"
+}

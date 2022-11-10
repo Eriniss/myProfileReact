@@ -46,18 +46,18 @@ const SubBox = styled.div`
 
   @media (max-width: 768px) {
     width: 25%;
-    height: 270px;
+    height: 330px;
   }
 `
 
 const SecondSubBox = styled.div`
-  width: 25%;
+  width: 40%;
   height: 100%;
   margin: 10px;
   display: inline-block;
   vertical-align: top;
   border-bottom: 1px solid #cbcbcb;
-`
+`;
 
 const App = () => {
   const personalInformation = data.personalInformation;

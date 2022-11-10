@@ -38,10 +38,25 @@ const ProfileBox = styled.div`
 
 const SubBox = styled.div`
   width: 25%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+  border-bottom: 1px solid #cbcbcb;
+
+  @media (max-width: 768px) {
+    width: 25%;
+    height: 270px;
+  }
+`
+
+const SecondSubBox = styled.div`
+  width: 25%;
   height: 100%;
   margin: 10px;
   display: inline-block;
   vertical-align: top;
+  border-bottom: 1px solid #cbcbcb;
 `
 
 const App = () => {
@@ -50,6 +65,22 @@ const App = () => {
   const skills = data.skillsNStack;
   const projects = data.projects;
   const selfIntro = data.selfIntroduce;
+
+  const firstSelfIntroBody: string = selfIntro.firstSubBody.split("\n").map((line: string) => {
+    return <p>{line}</p>;
+  });
+
+  const secondSelfIntroBody: string = selfIntro.secondSubBody.split("\n").map((line: string) => {
+    return <p>{line}</p>;
+  });
+
+  const thirdSelfIntroBody: string = selfIntro.thirdSubBody.split("\n").map((line: string) => {
+    return <p>{line}</p>;
+  });
+
+  const fourthSelfIntroBody: string = selfIntro.fourthSubBody.split("\n").map((line: string) => {
+    return <p>{line}</p>;
+  });
 
   return (
     <Container>
@@ -63,7 +94,6 @@ const App = () => {
         <h3>이메일: {personalInformation.email}</h3>
         <h3>깃허브: <a href='https://github.com/' style={{textDecoration: "none", color: "#000"}}>{personalInformation.github}</a></h3>
         <h3>블로그: <a href='https://velog.io/@jqk2195' style={{textDecoration: "none", color: "#000"}}>{personalInformation.blog}</a></h3>
-        <h3>전화번호: {personalInformation.phoneNumber}</h3>
       </ProfileBox>
       <ProfileBox>
         <BoxTitle>Career & Stack</BoxTitle>
@@ -112,15 +142,15 @@ const App = () => {
       </ProfileBox>
       <ProfileBox>
         <BoxTitle>Projects</BoxTitle>
-        <SubBox>
+        <SecondSubBox>
           <h3>{projects[0]}</h3>
           <p>역할: 프론트엔드</p>
           <p>웹의 전반적 디자인, 게시판 CRUD기능</p>
           <p>사용기술: React, Express, MongoDB</p>
-          <p>첫 프로젝트인 만큼 프로젝트의 전반적인 기획, 피그마와 깃허브의 사용방법에 대해 이해할 수 있었으며 팀원의 백엔드 코드를 리뷰하고 몽고DB의 사용방법에 대해 터득할 수 있었습니다.</p>
+          <p>첫 프로젝트인 만큼 배울점이 많은 프로젝트 였습니다. 프로젝트의 전반적인 기획, 피그마와 깃허브의 사용방법에 대해 이해할 수 있었으며 팀원의 백엔드 코드를 리뷰하고 몽고DB의 사용방법에 대해 터득할 수 있었습니다.</p>
           <a href="https://github.com/UOUWebDev/first-CRUD" style={{textDecoration: "none"}}><img src={Github}/> first-CRUD</a>
-        </SubBox>
-        <SubBox>
+        </SecondSubBox>
+        <SecondSubBox>
           <h3>{projects[1]}</h3>
           <p>역할: 기획, 프론트엔드, 백엔드</p>
           <p>프로젝트 기획, 웹의 전반적 디자인, 게시판 CRUD기능</p>
@@ -128,12 +158,24 @@ const App = () => {
           <p>개인프로젝트로 웹디자인, CRUD기능, 서버구축, 페이지네이션, 비동기 Ajax 데이터 통신 등의 기능을 구현하였습니다.</p>
           <a href="https://github.com/Eriniss/ICT-ulsan-project" style={{textDecoration: "none", marginRight: "20px"}}><img src={Github}/>ICT-ulsan-project</a>
           <a href="https://github.com/Eriniss/ICT-ulsan-project-server" style={{textDecoration: "none"}}><img src={Github}/>ICT-ulsan-project-server</a>
-        </SubBox>
+        </SecondSubBox>
       </ProfileBox>
       <ProfileBox>
         <BoxTitle>Self-Introduce</BoxTitle>
-        <p>{selfIntro}</p>
+        <h3>{selfIntro.firstSubTitle}</h3>
+        <p>{firstSelfIntroBody}</p>
+        <h3>{selfIntro.secondSubTitle}</h3>
+        <p>{secondSelfIntroBody}</p>
+        <h3>{selfIntro.thirdSubTitle}</h3>
+        <p>{thirdSelfIntroBody}</p>
+        <h3>{selfIntro.fourthSubTitle}</h3>
+        <p>{fourthSelfIntroBody}</p>
       </ProfileBox>
+      <footer>
+        <ProfileBox>
+          <a href="http://myprofile-env.eba-vqtawm76.ap-northeast-2.elasticbeanstalk.com/" style={{textDecoration: "none", color: "#121212"}}>이 이력서는 AWS를 통해 http://myprofile-env.eba-vqtawm76.ap-northeast-2.elasticbeanstalk.com에 배포되었습니다</a>
+        </ProfileBox>
+      </footer>
     </Container>
   );
 };
